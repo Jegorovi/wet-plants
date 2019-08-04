@@ -1,17 +1,27 @@
 import dotEnv from "dotenv";
 dotEnv.config();
 
+import io from "socket.io";
 import Express from "express";
+import http from "http";
+
 import bodyParser from "body-parser";
 import helmet from "helmet";
 import cors from "cors";
 import morgan from "morgan";
 import morganBody from "morgan-body";
-
 import { router } from "@config/Routes";
 import { ENVIRONMENT } from "@config/Environment";
 
 const app = Express();
+const server = http.createServer(app);
+const socketIO = io(server);
+
+socketIO.on("connection", function connection(_socket) {
+  // tslint:disable-next-line:no-console
+  console.log("a user connected", _socket.id);
+});
+
 const PORT = process.env.HTTP_PORT || 3001;
 
 app.use(morgan("combined"));
@@ -37,5 +47,7 @@ const corsOptions: cors.CorsOptions = {
 app.use(cors(corsOptions));
 
 app.use("/", router);
-// tslint:disable-next-line:no-console
-app.listen(PORT, () => console.log(`App listening on port ${PORT}!`));
+server.listen(PORT, () => {
+  // tslint:disable-next-line:no-console
+  console.log(`App listening on port ${PORT}! 🚀`);
+});

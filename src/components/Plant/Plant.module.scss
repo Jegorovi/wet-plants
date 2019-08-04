@@ -1,0 +1,21 @@
+.plant {
+	width: 20%;
+	height: 20%;
+	margin: 1em;
+	border: solid 1px rgba(147, 162, 155, 0.15);
+	box-shadow: 2px 2px 0.5em rgba(0, 0, 0, 0.1);
+	border-radius: 0.5em;
+	text-align: center;
+
+	.title {
+		font-weight: normal;
+	}
+
+	.red {
+		color: red;
+	}
+
+	.green {
+		color: green;
+	}
+}
