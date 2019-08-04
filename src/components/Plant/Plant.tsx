@@ -6,7 +6,7 @@ interface PlantProps {
   moisture: number;
 }
 
-export const Plant = ({ name, moisture }: PlantProps) => {
+export const Plant = ({ name, moisture = 0 }: PlantProps) => {
   return (
     <div className={styles.plant}>
 			<h2 className={styles.title}>{name}</h2>

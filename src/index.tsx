@@ -5,6 +5,7 @@ import { App } from './components/App/App';
 import * as serviceWorker from './serviceWorker';
 import openSocket from 'socket.io-client';
 import { ContextProvider } from "./Context";
+
 const socket = openSocket("localhost:3001");
 
 ReactDOM.render(

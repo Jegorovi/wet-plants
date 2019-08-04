@@ -12,6 +12,7 @@ import morgan from "morgan";
 import morganBody from "morgan-body";
 import { router } from "@config/Routes";
 import { ENVIRONMENT } from "@config/Environment";
+import { SerialPortListener } from "./serialPort";
 
 const app = Express();
 const server = http.createServer(app);
@@ -45,6 +46,9 @@ const corsOptions: cors.CorsOptions = {
   },
 };
 app.use(cors(corsOptions));
+
+const serialPortListener = new SerialPortListener();
+serialPortListener.init(socketIO);
 
 app.use("/", router);
 server.listen(PORT, () => {
