@@ -38,4 +38,4 @@ app.use(cors(corsOptions));
 
 app.use("/", router);
 // tslint:disable-next-line:no-console
-app.listen(PORT, () => console.log(`Example app listening on port ${PORT}!`));
+app.listen(PORT, () => console.log(`App listening on port ${PORT}!`));
