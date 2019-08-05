@@ -2,6 +2,7 @@ import React, { useContext, useCallback, useReducer } from 'react';
 import styles from './App.module.scss';
 import { Plant } from "../Plant/Plant";
 import { Context } from "../../Context";
+import { plantMap } from "../../planties";
 
 type Data = [string, number, number];
 
@@ -40,10 +41,9 @@ export const App = () => {
 
   return (
     <div className={styles.app}>
-      <Plant name="Succulents" moisture={state.blue} />
-      <Plant name="Avocado" moisture={state.purple} />
-      <Plant name="Jasmine" moisture={state.black} />
-      <Plant name="Mint" moisture={state.yellow} />
+      {plantMap.map(({ name, moistureSensorKey }, i) => (
+        <Plant key={i} name={name} moisture={state[moistureSensorKey]} />
+      ))}
     </div>
   );
 }
