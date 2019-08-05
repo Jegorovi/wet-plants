@@ -1,8 +1,8 @@
 .app {
-  height: 100%;
   display: grid;
-  grid-template-columns: repeat( auto-fit, minmax(20em, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
   grid-gap: 1em;
   padding: 2em;
-  grid-template-rows: repeat(auto-fit, minmax(10em, max-content));
+  max-width: 60em;
+  margin: 0 auto;
 }
