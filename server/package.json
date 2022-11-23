@@ -60,7 +60,7 @@
     "morgan": "^1.9.1",
     "morgan-body": "^2.4.7",
     "serialport": "^7.1.5",
-    "socket.io": "^2.2.0",
+    "socket.io": "^2.5.0",
     "source-map-support": "^0.5.12"
   }
 }
